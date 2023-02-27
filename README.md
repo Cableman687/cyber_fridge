@@ -1,2 +1,2 @@
-# inventory-manager
-An application to track company inventory and assets.
+# Fridge Management
+An application to track whats in your fridge.
