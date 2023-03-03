@@ -2,6 +2,7 @@ const User = require('./User');
 const Ingredient = require('./Ingredient');
 const Recipe = require('./Recipe');
 
+
 User.hasMany(Ingredient, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
@@ -21,3 +22,6 @@ Recipe.belongsTo(User, {
   });
 
 module.exports = { User, Ingredient, Recipe};
+
+
+
