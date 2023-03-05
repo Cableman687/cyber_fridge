@@ -1,0 +1,33 @@
+[
+    {
+      "category": "Fruit",
+      "name": "Apple",
+      "quantity" :"3",
+      "user_id" : "1"
+    },
+    {
+      "category": "Meat",
+      "name": "Steak",
+      "quantity" :"1",
+      "user_id" : "1"
+    },
+    {
+      "category": "Dairy",
+      "name": "Milk",
+      "quantity" :"1",
+      "user_id" : "1"
+    },
+    {
+      "category": "Fruit",
+      "name": "Banana",
+      "quantity" :"3",
+      "user_id" : "1"
+    },
+    {
+      "category": "Dairy",
+      "name": "Cheese",
+      "quantity" :"3",
+      "user_id" : "1"
+    }
+
+]
