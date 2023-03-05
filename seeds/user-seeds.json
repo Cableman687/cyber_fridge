@@ -1,0 +1,20 @@
+[
+    {
+      "id": "1",
+      "name": "Jack Murphy",
+      "email": "jack@gmail.com",
+      "password": "lovefood"
+    },
+    {
+        "id": "2",
+        "name": "Ann White",
+        "email": "ann@hotmail.com",
+        "password": "lovefood"
+    },
+   {
+        "id": "3",
+        "name": "Liam Black",
+        "email": "liam@gmail.com",
+        "password": "lovefood"
+    }
+]
