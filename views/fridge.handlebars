@@ -1,0 +1,33 @@
+<section>
+    <!--Number of fridge items {{ingredients.length}} -->
+  {{#if ingredients}}
+    <form id="update-ingredients">
+        <!--hidden fields that get updated when a user updates/deletes a fridge item -->
+        <!--only want to update the fields that actually changed -->
+        <input type="hidden" id="delete-fields"></input>
+        <input type="hidden" id="update-fields"></input>
+        <table>
+        <tr><th></th><th>Category</th><th>Product Name</th><th>Quantity</th><th>Delete</th></th></tr>
+         {{#each ingredients as |ingredient| }}
+         <tr>
+            <td id="{{ingredient.id}}"></td>
+            <td>{{ingredient.category}}</td>
+            <td>{{ingredient.name}}</td>
+            <!--update 'update-fields' with id and quantity when quantity changes - see onchange updateThis -->
+            <td><input id="quantity_{{ingredient.id}}" value="{{ingredient.quantity}}" onchange="updateThis('{{ingredient.id}}')"></input></td>  
+            <!--update 'delete-fields' with id when checkbox is checked - see onclick deleteThis -->
+            <td><input type="checkbox" id="delete_{{ingredient.id}}" onclick="deleteThis('{{ingredient.id}}')"></input></td>
+         </tr>
+        {{/each}}
+    </table>
+    <button type="submit">Update</button>
+    </form>
+    {{else}}
+        Empty fridge!
+    {{/if}}
+</section>
+<!--dialog for validation -->
+<div id="dialog" title="Validation" class="hidden">
+    <p id="dialog-error-msg">Please enter your content.</p>
+</div>
+<script src="/js/fridge.js"></script> 

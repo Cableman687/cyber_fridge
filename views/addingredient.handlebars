@@ -1,0 +1,33 @@
+<section>
+    <form class="form" id="new-ingredient">
+       <div class="form-group">
+            <label for="category">Category:</label>
+           <!-- <input type="text" id="category" /> -->
+            <select id="category" name="category" >
+                <option value="" selected></option>
+                <option value="Meat">Meat</option>
+                <option value="Fruit">Fruit</option>
+                <option value="Vegetables">Vegetables</option>
+            </select>
+       </div>     
+        
+        <div class="form-group">
+            <label for="name">Product Name:</label>
+            <input type="text" id="name" />
+        </div>  
+        
+        <div class="form-group">
+            <label for="quantity">Quantity:</label>
+            <input type="text" id="quantity" />
+        </div>  
+        
+
+        <button type="submit">Add</button>
+            
+    </form>
+</section>
+<!--dialog for validation -->
+<div id="dialog" title="Validation" class="hidden">
+    <p id="dialog-error-msg">Please enter your content.</p>
+</div>
+<script src="/js/ingredient.js"></script> 
