@@ -55,7 +55,7 @@ router.get('/selections', withAuth, (req, res) => {
   
   try {
     
-    res.render('selections', {
+    res.render('pages/selections', {
       // Pass the logged in flag to the template
       logged_in: req.session.logged_in,
     });
@@ -71,7 +71,7 @@ router.get('/addingredient', withAuth, (req, res) => {
   
   try {
     
-    res.render('addingredient', {
+    res.render('pages/addingredient', {
       // Pass the logged in flag to the template
       logged_in: req.session.logged_in,
     });
@@ -92,7 +92,7 @@ router.get('/fridge', withAuth, async(req, res) => {
 
     const ingredients = ingredientData.map((ingredient) => ingredient.get({ plain: true }));
     console.log(ingredients);
-    res.render('fridge', {
+    res.render('pages/fridge', {
       ingredients,
       // Pass the logged in flag to the template
       logged_in: req.session.logged_in,
