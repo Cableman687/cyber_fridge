@@ -6,6 +6,10 @@
         <!--only want to update the fields that actually changed -->
         <input type="hidden" id="delete-fields"></input>
         <input type="hidden" id="update-fields"></input>
+        <input type="hidden" id="labels" value ="{{{labels ingredients}}}"></input>
+        <input type="hidden" id="quantities" value ="{{{quantities ingredients}}}"></input>
+        <input type="hidden" id="categories" value ="{{{categories ingredients}}}"></input>
+        <input type="hidden" id="category_count" value ="{{{category_count ingredients}}}"></input>
         <table>
         <tr><th></th><th>Category</th><th>Product Name</th><th>Quantity</th><th>Delete</th></th></tr>
          {{#each ingredients as |ingredient| }}
@@ -22,8 +26,18 @@
     </table>
     <button type="submit">Update</button>
     </form>
+
+    <div>
+        <canvas id="productNameChart"></canvas>
+    </div>
+
+    <div>
+        <canvas id="categoryChart"></canvas>
+    </div>
+
     {{else}}
         Empty fridge!
+        
     {{/if}}
 </section>
 <!--dialog for validation -->
@@ -31,3 +45,63 @@
     <p id="dialog-error-msg">Please enter your content.</p>
 </div>
 <script src="/js/fridge.js"></script> 
+<!--
+<script type="module" src="/js/chart-fridge.js"></script> 
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!--script for chart -->
+<script>
+//PRODUCT chart
+const ctx = document.getElementById('productNameChart');
+  
+const labels = document.getElementById("labels").value.split(",");
+const quantities = document.getElementById("quantities").value.split(",");
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: '# of Ingredients',
+        data: quantities,
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+//CATEGORY Chart
+const ctxCategory = document.getElementById('categoryChart');
+  
+const categories = document.getElementById("categories").value.split(",");
+const categoryCount = document.getElementById("category_count").value.split(",");
+
+  new Chart(ctxCategory, {
+    type: 'bar',
+    data: {
+      //labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: categories,
+      datasets: [{
+        label: 'by Category',
+        data: categoryCount,
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+
+</script>
