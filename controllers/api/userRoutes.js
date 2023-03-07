@@ -47,4 +47,33 @@ router.post('/logout', (req, res) => {
   }
 });
 
+// Create a new account
+router.post('/signup', async (req, res) => {
+  try {
+    // //Find the user who matches the posted email address.
+    const userData = await User.findOne({ where: { email: req.body.email } });
+
+    if (userData) {
+      res
+        .status(400)
+        .json({ message: 'Account Already Exists!' });
+      return;
+    }
+
+    const newUser = await User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+    })
+
+    return res.json(newUser);
+
+
+
+  } catch (err) {
+    res.status(400).json(err);
+    console.log("Error in userRoutes File!");
+  }
+});
+
 module.exports = router;
