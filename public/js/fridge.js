@@ -1,3 +1,13 @@
+
+function getCategories(obj, v) {
+    obj[v.category] = (obj[v.category] || 0) + 1;
+    // return the updated object
+    return obj;
+    // set the initial value as an object
+  };
+
+  //console.log(myArray.reduce(getCategories));
+ 
 function showError(msg) {
   document.querySelector('#dialog-error-msg').innerHTML =msg;
   document.querySelector('#dialog').classList.remove("hidden");
@@ -112,6 +122,7 @@ const updateIngredientHandler = async (event) => {
    // alert(response.statusText);
   //}
 };
+
 
 
 //added listener to button
