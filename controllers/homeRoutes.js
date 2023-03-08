@@ -18,6 +18,7 @@ router.get('/', withAuth, async (req, res) => {
       users,
       // Pass the logged in flag to the template
       logged_in: req.session.logged_in,
+      user_name: req.session.user_name,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -58,6 +59,7 @@ router.get('/selections', withAuth, (req, res) => {
     res.render('pages/selections', {
       // Pass the logged in flag to the template
       logged_in: req.session.logged_in,
+      user_name: req.session.user_name,
     });
     return;
   } catch(err) {
@@ -74,6 +76,7 @@ router.get('/addingredient', withAuth, (req, res) => {
     res.render('pages/addingredient', {
       // Pass the logged in flag to the template
       logged_in: req.session.logged_in,
+      user_name: req.session.user_name,
     });
     return;
   //}
@@ -96,6 +99,7 @@ router.get('/fridge', withAuth, async(req, res) => {
       ingredients,
       // Pass the logged in flag to the template
       logged_in: req.session.logged_in,
+      user_name: req.session.user_name,
       "labels": ["beef", "lamb"],
     });
   
