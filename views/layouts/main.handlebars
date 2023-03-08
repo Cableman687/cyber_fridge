@@ -12,13 +12,16 @@
 </head>
 
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
+  <header class="display-flex justify-flex-start align-center p-2 text-center">
 
     <!-- Only display the logout button if the user is logged in -->
     {{#if logged_in}}
     <nav>
       <button class="btn" id="logout">logout</button>
     </nav>
+    <p class="ml-4 font30">
+      {{user_name}}
+    </p>
     {{/if}}
   </header>
   <main class="container container-fluid mt-5">
