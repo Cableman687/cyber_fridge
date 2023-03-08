@@ -249,6 +249,10 @@ progress {
   vertical-align: baseline;
 }
 
+.vertical-middle {
+  vertical-align: middle;
+}
+
 /**
  * Remove the default vertical scrollbar in IE 10+.
  */
@@ -393,6 +397,10 @@ h5 {
 
 h6 {
   font-size: 1rem;
+}
+
+.font30 {
+  font-size: 30px;
 }
 
 p {
