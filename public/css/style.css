@@ -19,3 +19,8 @@ form .form-group {
   font-size: 5rem;
   color: black;
 }
+
+.chart {
+  height: 30%;
+  width: 30%;
+}

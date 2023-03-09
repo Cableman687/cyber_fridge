@@ -1,0 +1,9 @@
+         <tr>
+            <td id="{{id}}"></td>
+            <td>{{category}}</td>
+            <td>{{name}}</td>
+            <!--update 'update-fields' with id and quantity when quantity changes - see onchange updateThis -->
+            <td><input id="quantity_{{id}}" value="{{quantity}}" onchange="updateThis('{{id}}')"></input></td>  
+            <!--update 'delete-fields' with id when checkbox is checked - see onclick deleteThis -->
+            <td><input type="checkbox" id="delete_{{id}}" onclick="deleteThis('{{id}}')"></input></td>
+         </tr>
