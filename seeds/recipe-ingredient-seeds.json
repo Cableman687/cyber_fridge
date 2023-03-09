@@ -1,0 +1,18 @@
+[
+    {
+        "recipe_id": 1,
+        "ingredient_id": 6,
+        "ingredient_quantity": 2
+    },
+    {
+        "recipe_id": 1,
+        "ingredient_id": 7,
+        "ingredient_quantity": 1
+    },
+    {
+        "recipe_id": 1,
+        "ingredient_id": 8,
+        "ingredient_quantity": 1
+    }
+    
+]
