@@ -1,33 +1,194 @@
 [
     {
-      "category": "Fruit",
-      "name": "Apple",
-      "quantity" :"3",
-      "user_id" : "1"
+        "category": "Fruit",
+        "name": "Apple",
+        "quantity": "3",
+        "user_id": "1"
     },
     {
-      "category": "Meat",
-      "name": "Steak",
-      "quantity" :"1",
-      "user_id" : "1"
+        "category": "Meat",
+        "name": "Steak",
+        "quantity": "1",
+        "user_id": "1"
     },
     {
-      "category": "Dairy",
-      "name": "Milk",
-      "quantity" :"1",
-      "user_id" : "1"
+        "category": "Dairy",
+        "name": "Milk",
+        "quantity": "1",
+        "user_id": "1"
     },
     {
-      "category": "Fruit",
-      "name": "Banana",
-      "quantity" :"3",
-      "user_id" : "1"
+        "category": "Dairy",
+        "name": "Cheese",
+        "quantity": "3",
+        "user_id": "1"
     },
     {
-      "category": "Dairy",
-      "name": "Cheese",
-      "quantity" :"3",
-      "user_id" : "1"
+        "category": "Fruit",
+        "name": "Banana",
+        "quantity": "3",
+        "user_id": "1"
+    },
+    {
+        "category": "Canned Goods",
+        "name": "Canned Tomatoes",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Baking",
+        "name": "Bread Crumbs",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Oil",
+        "name": "Olive Oil",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Baking",
+        "name": "Flour",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Baking",
+        "name": "Sugar",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Seasoning",
+        "name": "Salt",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Seasoning",
+        "name": "Pepper",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Canned Goods",
+        "name": "Chicken Broth",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Condiments",
+        "name": "Balsamic Vinegar",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Condiments",
+        "name": "Honey",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Vegetables",
+        "name": "Carrots",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Vegetables",
+        "name": "Broccoli",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Vegetables",
+        "name": "Cauliflower",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Vegetables",
+        "name": "Celery",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Vegetables",
+        "name": "Bell Peppers",
+        "quantity": "3",
+        "user_id": "1"
+    },
+    {
+        "category": "Vegetables",
+        "name": "Potatoes",
+        "quantity": "5",
+        "user_id": "1"
+    },
+    {
+        "category": "Vegetables",
+        "name": "Sweet Potatoes",
+        "quantity": "3",
+        "user_id": "1"
+    },
+    {
+        "category": "Vegetables",
+        "name": "Onions",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Vegetables",
+        "name": "Garlic",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Vegetables",
+        "name": "Ginger",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Baking",
+        "name": "Bread",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Dairy",
+        "name": "Eggs",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Vegetables",
+        "name": "Tomatoes",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Seafood",
+        "name": "Fish",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Pasta",
+        "name": "Spaghetti",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Meat",
+        "name": "Mince",
+        "quantity": "1",
+        "user_id": "1"
+    },
+    {
+        "category": "Bakery",
+        "name": "Toast bread",
+        "quantity": "1",
+        "user_id": "1"
     }
-
 ]
