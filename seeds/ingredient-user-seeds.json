@@ -1,0 +1,15 @@
+[
+    {
+        "user_id": 1,
+        "ingredient_id": "3"
+    },
+    {
+        "user_id": 1,
+        "ingredient_id": "4"
+    },
+    {
+        "user_id": 1,
+        "ingredient_id": "5"
+    }
+    
+]
