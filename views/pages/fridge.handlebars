@@ -62,7 +62,6 @@ const ctx = document.getElementById('productNameChart');
   
 const labels = document.getElementById("labels").value.split(",");
 const quantities = document.getElementById("quantities").value.split(",");
-
   new Chart(ctx, {
     type: 'bar',
     data: {
@@ -81,13 +80,11 @@ const quantities = document.getElementById("quantities").value.split(",");
       }
     }
   });
-
 //CATEGORY Chart
 const ctxCategory = document.getElementById('categoryChart');
   
 const categories = document.getElementById("categories").value.split(",");
 const categoryCount = document.getElementById("category_count").value.split(",");
-
   new Chart(ctxCategory, {
     type: 'bar',
     data: {
@@ -111,6 +108,8 @@ const categoryCount = document.getElementById("category_count").value.split(",")
 
 
 
+
 </script>
 
 <script src="/js/transfers/transferToSelections.js"></script>
+
