@@ -4,20 +4,20 @@
 </div>
 <section class="">
     <!--Number of fridge items {{ingredients.length}} -->
-  {{#if ingredients}}
+  {{#if user.ingredients}}
     <form id="update-ingredients">
         <!--hidden fields that get updated when a user updates/deletes a fridge item -->
         <!--only want to update the fields that actually changed -->
         <input type="hidden" id="delete-fields"></input>
         <input type="hidden" id="update-fields"></input>
         <!--May want to remove these from helper functions and add them to the Route -->
-        <input type="hidden" id="labels" value ="{{{labels ingredients}}}"></input>
-        <input type="hidden" id="quantities" value ="{{{quantities ingredients}}}"></input>
-        <input type="hidden" id="categories" value ="{{{categories ingredients}}}"></input>
-        <input type="hidden" id="category_count" value ="{{{category_count ingredients}}}"></input>
+        <input type="hidden" id="labels" value ="{{{labels user.ingredients}}}"></input>
+        <input type="hidden" id="quantities" value ="{{{quantities user.ingredients}}}"></input>
+        <input type="hidden" id="categories" value ="{{{categories user.ingredients}}}"></input>
+        <input type="hidden" id="category_count" value ="{{{category_count user.ingredients}}}"></input>
         <table>
         <tr><th></th><th>Category</th><th>Product Name</th><th>Quantity</th><th>Delete</th></th></tr>
-         {{#each ingredients as |ingredient| }}
+         {{#each user.ingredients as |ingredient| }}
          {{>fridge-details}}         
         {{/each}}
     </table>
