@@ -135,11 +135,8 @@ router.get('/recipes', withAuth, async(req, res) => {
 
 });
 
-
-
-
 // Show Recipe Contents
-router.get('/recipe/:id', async (req, res) => {
+router.get('/recipes/:id', async (req, res) => {
 
   const recipeData = await Recipe.findAll({
     where: { id: req.params.id },
@@ -168,10 +165,18 @@ router.get('/recipe/:id', async (req, res) => {
   const recipes = recipeData.map((project) => project.get({plain: true}));
 
   console.table(recipes);
-  console.log(recipes);
+  console.log(recipes[0].ingredients);
 
-  let recipeArray = recipes[0].ingredients;
-  let requiredIngredients = [];
+  res.render('pages/viewRecipeContents', {
+    recipes,
+    
+    logged_in: req.session.logged_in,
+    user_name: req.session.user_name,
+  });
+
+  ///--old
+  // let recipeArray = recipes[0].ingredients;
+  // let requiredIngredients = [];
 
   // for(var i = 0; i < recipeArray.length; i++){
   //   console.log(recipes[0].ingredients[i].dataValues.name);
@@ -180,12 +185,6 @@ router.get('/recipe/:id', async (req, res) => {
 
   // console.log(recipes[0].ingredients[0].dataValues.name);
   // console.log(requiredIngredients);
-  
-  res.render('pages/viewRecipeContents', {
-    recipes,
-    requiredIngredients,
-    logged_in: req.session.logged_in,
-  });
 
 });
 

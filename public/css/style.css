@@ -13,6 +13,10 @@ form .form-group {
   display: none;
 }
 
+.underline{
+  text-decoration: underline;
+}
+
 .main-title {
   font-family: Dancing Script;
   font-weight: 700;
