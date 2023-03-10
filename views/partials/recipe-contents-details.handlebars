@@ -1,11 +1,25 @@
 
 <div class="row align-center mb-5 bg-light card">
     
-    <div class="col-md-6" >
+    <div class="col-md-12" >
         <h2 class="recipetitle">{{name}}</h2>
     </div>
 
-    {{#each ingredients }}
+    <div class="col-md-8 underline" >
+        <h2 class="recipetitle">Ingredients</h2>
+    </div>
+
+    <div class="col-md-2 underline" >
+        <h2 class="recipetitle">Needed</h2>
+    </div>
+
+    <div class="col-md-2 underline" >
+        <h2 class="recipetitle">In-Fridge</h2>
+    </div>
+    
+
+    
+    {{#each ingredients as |ingredient|}}
       {{> recipe-contents-ingredients}}
     {{/each}}
 
