@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { User, Ingredient ,Recipe, RecipeIngredient,  } = require('../models');
+const { User, Ingredient ,Recipe, RecipeIngredient, IngredientUser } = require('../models');
 
 const withAuth = require('../utils/auth');
 
@@ -88,19 +88,27 @@ router.get('/addingredient', withAuth, (req, res) => {
 //get all ingredients for logged in user
 router.get('/fridge', withAuth, async(req, res) => {
   
-  const ingredientData = await Ingredient.findAll({
-      where: { user_id: req.session.user_id},
-      order: [['category', 'ASC']],
+  const userData = await User.findOne({
+      where: { id: req.session.user_id},
+      include: [
+        {
+          model: Ingredient,
+          through: IngredientUser,          
+        },
+      ],
+     // 
+      //order: [['category', 'ASC']],
     });
-
-    const ingredients = ingredientData.map((ingredient) => ingredient.get({ plain: true }));
-    console.log(ingredients);
+    //console.log(ingredientData);
+    //const ingredients = ingredientData.map((ingredient) => ingredient.get({ plain: true }));
+    const user = userData.get({ plain: true });
+    console.log(user.ingredients);
     res.render('pages/fridge', {
-      ingredients,
+      user,
       // Pass the logged in flag to the template
       logged_in: req.session.logged_in,
       user_name: req.session.user_name,
-      "labels": ["beef", "lamb"],
+      
     });
   
     return;
