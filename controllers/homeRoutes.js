@@ -135,11 +135,8 @@ router.get('/recipes', withAuth, async(req, res) => {
 
 });
 
-
-
-
 // Show Recipe Contents
-router.get('/recipe/:id', async (req, res) => {
+router.get('/recipes/:id', async (req, res) => {
 
   const recipeData = await Recipe.findAll({
     where: { id: req.params.id },

@@ -1,14 +1,17 @@
-<div class="col-md-8" >
-    <h2 class="ingredientname">{{name}}</h2>
+<div class="row pl-3">
+    <div class="col-md-8 m-1 text-primary-emphasis bs-light-bg-subtle border border-primary-subtle rounded-3" >
+        <h2 class="ingredient-name">{{name}}</h2>
+    </div>
+
+    <div class="col text-center m-1 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3" >
+        <h2 class="required-quantity">{{recipe_ingredient.ingredient_quantity}}</h2>
+    </div>
+
+    <div class="col text-center m-1 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3" >
+        <h2 class="current-quantity">{{quantity}}</h2>
+    </div>
 </div>
 
-<div class="col-md-2" >
-    <h2 class="ingredientname">{{recipe_ingredient.ingredient_quantity}}</h2>
-</div>
-
-<div class="col-md-2" >
-    <h2 class="ingredientname">{{quantity}}</h2>
-</div>
 
 
 
