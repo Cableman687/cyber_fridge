@@ -2,32 +2,48 @@
     {
       "category": "Fruit",
       "name": "Apple",
-      "quantity" :"3",
-      "user_id" : "1"
+      "quantity" :"3"
+      
     },
     {
       "category": "Meat",
       "name": "Steak",
-      "quantity" :"1",
-      "user_id" : "1"
+      "quantity" :"1"
+      
     },
     {
       "category": "Dairy",
       "name": "Milk",
-      "quantity" :"1",
-      "user_id" : "1"
+      "quantity" :"1"
+      
     },
     {
       "category": "Fruit",
       "name": "Banana",
-      "quantity" :"3",
-      "user_id" : "1"
+      "quantity" :"3"
+      
     },
     {
       "category": "Dairy",
       "name": "Cheese",
-      "quantity" :"3",
-      "user_id" : "1"
+      "quantity" :"3"
+      
+    },
+    {
+      "category": "Dairy",
+      "name": "Eggs",
+      "quantity" :"32"
+      
+    },
+    {
+      "category": "Dairy",
+      "name": "Toast",
+      "quantity" :"42"
+      
+    },
+    {
+      "category": "Dairy",
+      "name": "Salt",
+      "quantity" :"54"
     }
-
 ]

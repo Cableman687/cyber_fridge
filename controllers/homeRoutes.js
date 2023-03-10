@@ -1,6 +1,8 @@
 const router = require('express').Router();
 
-const { User, Ingredient, Recipe } = require('../models');
+
+const { User, Ingredient ,Recipe, RecipeIngredient  } = require('../models');
+
 
 const withAuth = require('../utils/auth');
 
@@ -108,6 +110,7 @@ router.get('/fridge', withAuth, async(req, res) => {
 
 });
 
+
 //get all recipes for logged in user
 router.get('/recipes', withAuth, async(req, res) => {
   
@@ -133,6 +136,58 @@ router.get('/recipes', withAuth, async(req, res) => {
 });
 
 
+
+
+// Show Recipe Contents
+router.get('/recipe/:id', async (req, res) => {
+
+  const recipeData = await Recipe.findAll({
+    where: { id: req.params.id },
+    include : [
+      {
+        model: Ingredient,
+        through: RecipeIngredient,
+        attributes: [
+          'id',
+          'name',
+          'category',
+          'quantity',
+        ],
+        
+      },
+      {
+        model: RecipeIngredient,
+        attributes: [
+          'ingredient_quantity',
+        ]
+      },
+    ],
+  }); 
+
+ 
+  const recipes = recipeData.map((project) => project.get({plain: true}));
+
+  console.table(recipes);
+  console.log(recipes);
+
+  let recipeArray = recipes[0].ingredients;
+  let requiredIngredients = [];
+
+  // for(var i = 0; i < recipeArray.length; i++){
+  //   console.log(recipes[0].ingredients[i].dataValues.name);
+  //   requiredIngredients.push(recipes[0].ingredients[i].dataValues.name);
+  // }
+
+  // console.log(recipes[0].ingredients[0].dataValues.name);
+  // console.log(requiredIngredients);
+  
+  res.render('pages/viewRecipeContents', {
+    recipes,
+    requiredIngredients,
+    logged_in: req.session.logged_in,
+  });
+
+});
 
 
 module.exports = router;
