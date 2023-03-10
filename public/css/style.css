@@ -16,3 +16,15 @@ form .form-group {
 .underline{
   text-decoration: underline;
 }
+
+.main-title {
+  font-family: Dancing Script;
+  font-weight: 700;
+  font-size: 5rem;
+  color: black;
+}
+
+.chart {
+  height: 30%;
+  width: 30%;
+}

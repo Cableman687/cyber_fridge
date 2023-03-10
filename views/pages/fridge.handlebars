@@ -1,4 +1,8 @@
-<section>
+<div class="flex-container">
+
+
+</div>
+<section class="">
     <!--Number of fridge items {{ingredients.length}} -->
   {{#if ingredients}}
     <form id="update-ingredients">
@@ -6,6 +10,7 @@
         <!--only want to update the fields that actually changed -->
         <input type="hidden" id="delete-fields"></input>
         <input type="hidden" id="update-fields"></input>
+        <!--May want to remove these from helper functions and add them to the Route -->
         <input type="hidden" id="labels" value ="{{{labels ingredients}}}"></input>
         <input type="hidden" id="quantities" value ="{{{quantities ingredients}}}"></input>
         <input type="hidden" id="categories" value ="{{{categories ingredients}}}"></input>
@@ -13,33 +18,29 @@
         <table>
         <tr><th></th><th>Category</th><th>Product Name</th><th>Quantity</th><th>Delete</th></th></tr>
          {{#each ingredients as |ingredient| }}
-         <tr>
-            <td id="{{ingredient.id}}"></td>
-            <td>{{ingredient.category}}</td>
-            <td>{{ingredient.name}}</td>
-            <!--update 'update-fields' with id and quantity when quantity changes - see onchange updateThis -->
-            <td><input id="quantity_{{ingredient.id}}" value="{{ingredient.quantity}}" onchange="updateThis('{{ingredient.id}}')"></input></td>  
-            <!--update 'delete-fields' with id when checkbox is checked - see onclick deleteThis -->
-            <td><input type="checkbox" id="delete_{{ingredient.id}}" onclick="deleteThis('{{ingredient.id}}')"></input></td>
-         </tr>
+         {{>fridge-details}}         
         {{/each}}
     </table>
     <button type="submit">Update</button>
     </form>
 
-    <div>
-        <canvas id="productNameChart"></canvas>
-    </div>
-
-    <div>
-        <canvas id="categoryChart"></canvas>
-    </div>
+    
 
     {{else}}
         Empty fridge!
         
     {{/if}}
 </section>
+
+<figure class="chart">
+  <!--PRODUCT chart-->
+  <canvas id="productNameChart"></canvas>   
+</figure>
+
+<figure class="chart">
+  <!--CATEGORY Chart -->
+  <canvas id="categoryChart"></canvas>
+</figure>
 
 <div class="form-group text-center">
   <button class="btn btn-primary" type="button" id="selections-button">Return to Selections</button>
@@ -57,37 +58,35 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!--script for chart -->
 <script>
-//PRODUCT chart
-const ctx = document.getElementById('productNameChart');
-  
-const labels = document.getElementById("labels").value.split(",");
-const quantities = document.getElementById("quantities").value.split(",");
-
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: labels,
-      datasets: [{
-        label: '# of Ingredients',
-        data: quantities,
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-
+    //PRODUCT Chart
+      const ctx = document.getElementById('productNameChart');
+      
+      const labels = document.getElementById("labels").value.split(",");
+      const quantities = document.getElementById("quantities").value.split(",");
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: '# of Ingredients',
+              data: quantities,
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+    
 //CATEGORY Chart
 const ctxCategory = document.getElementById('categoryChart');
   
 const categories = document.getElementById("categories").value.split(",");
 const categoryCount = document.getElementById("category_count").value.split(",");
-
   new Chart(ctxCategory, {
     type: 'bar',
     data: {
@@ -111,6 +110,8 @@ const categoryCount = document.getElementById("category_count").value.split(",")
 
 
 
+
 </script>
 
 <script src="/js/transfers/transferToSelections.js"></script>
+
