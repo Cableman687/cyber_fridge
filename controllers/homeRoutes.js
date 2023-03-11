@@ -68,6 +68,109 @@ router.get('/selections', withAuth, (req, res) => {
 
 });
 
+//****************Add Recipes************* */
+
+//display page with option to add recipe name and button to add ingredient
+router.get('/addrecipe', withAuth, (req, res) => {
+  
+  try {
+    
+    res.render('pages/addrecipe', {
+      // Pass the logged in flag to the template
+      logged_in: req.session.logged_in,
+      user_name: req.session.user_name,
+    });
+    return;
+  } catch(err) {
+    res.status(500).json(err);
+  }
+
+});
+
+
+//display page to allow user add ingredient - category, name, quantity
+router.get('/addrecipeingredient', withAuth, async (req, res) => {
+  
+  try {
+    console.log("PARAMS ID " + req.query.id);
+    console.log("PARAMS NAME" + req.query.name);
+    //GET THE INGREDIENTS FROM USERS FRIDGE TO USE
+    //IN DROP DOWN IN FORM WHEN ADDING INGREDIENTS
+    const userData = await User.findOne({
+      where: { id: req.session.user_id},
+      include: [
+        {
+          model: Ingredient,
+          through: IngredientUser,          
+        },
+      ],
+     
+    });
+    
+    const user = userData.get({ plain: true });
+
+    const recipeData = await Recipe.findAll({
+      where: { id: req.query.id },
+      include : [
+        {
+          model: Ingredient,
+          through: RecipeIngredient,
+          attributes: [
+            'id',
+            'name',
+            'category',
+            'quantity',
+          ],
+          
+        },
+        {
+          model: RecipeIngredient,
+          attributes: [
+            'ingredient_quantity',
+          ]
+        },
+      ],
+    }); 
+  
+   
+    const recipes = recipeData.map((project) => project.get({plain: true}));
+    console.log(recipes);
+    //console.table(recipes.ingredients);
+//console.log(recipes[0].ingredients);
+/*
+    const ingredientData = await RecipeIngredient.findAll({
+      where: { recipe_id: req.query.id},
+    });
+*/
+    /*
+    const recipe_ingredients = [];
+    if (ingredientData) {
+       recipe_ingredients = ingredientData.map((ingredient) => ingredient.get({ plain: true }));
+    } 
+    */
+    
+//console.log("RECIPE ingredients !!! " + recipe_ingredients);
+    //console.log(req.params.id);
+    res.render('pages/addrecipeingredient', {
+      // Pass the logged in flag to the template
+      logged_in: req.session.logged_in,
+      user_name: req.session.user_name,
+      /*recipe_id: req.params.id,*/
+      recipe_id: req.query.id,
+      recipe_name: req.query.name,
+      user,
+      recipes,
+    });
+    return;
+  //}
+  } catch(err) {
+    res.status(500).json(err); 
+  }
+});
+
+//*************END ADD Recipes************ */
+
+
 //display page to allow user add ingredient - category, name, quantity
 router.get('/addingredient', withAuth, (req, res) => {
   
