@@ -5,4 +5,4 @@ const transferAddRecipe   = async (event) => {
 
 };
   
-document.querySelector('#fridge-button').addEventListener('click', transferAddRecipe);
+document.querySelector('#recipe-button').addEventListener('click', transferAddRecipe);
