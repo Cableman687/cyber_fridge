@@ -1,48 +1,63 @@
-<div class="flex-container">
+<div class="container" >
+
+  <div class="d-flex flex-column">
+      
+      <section class="col-sm">
+          <!--Number of fridge items {{ingredients.length}} -->
+        {{#if user.ingredients}}
+          <form id="update-ingredients">
+              <!--hidden fields that get updated when a user updates/deletes a fridge item -->
+              <!--only want to update the fields that actually changed -->
+              <input type="hidden" id="delete-fields"></input>
+              <input type="hidden" id="update-fields"></input>
+              <!--May want to remove these from helper functions and add them to the Route -->
+              <input type="hidden" id="labels" value ="{{{labels user.ingredients}}}"></input>
+              <input type="hidden" id="quantities" value ="{{{quantities user.ingredients}}}"></input>
+              <input type="hidden" id="categories" value ="{{{categories user.ingredients}}}"></input>
+              <input type="hidden" id="category_count" value ="{{{category_count user.ingredients}}}"></input>
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr><th></th><th scope="col">Category</th><th>Product Name</th><th>Quantity</th><th>Delete</th></th></tr>
+                </thead>
+              
+              {{#each user.ingredients as |ingredient| }}
+              {{>fridge-details}}         
+              {{/each}}
+          </table>
+          
+          </form>
+
+          
+
+          {{else}}
+              Empty fridge!
+              
+          {{/if}}
+      </section>
+      <!--Start row for charts -->
+      <div class="container">
+        <div class="d-flex flex-row flex-wrap align-content-center justify-content-center min-vh-50 p-5" >
+            
+                <figure class="chart p-30">
+                  <!--PRODUCT chart-->
+                  <canvas id="productNameChart"></canvas>   
+                </figure>
+
+                <figure class="chart p-30">
+                  <!--CATEGORY Chart -->
+                  <canvas id="categoryChart"></canvas>
+                </figure>
+            
+        </div> <!--end row -->
+      </div> <!--end container -->
+      <!--End of chart row -->
 
 
-</div>
-<section class="">
-    <!--Number of fridge items {{ingredients.length}} -->
-  {{#if user.ingredients}}
-    <form id="update-ingredients">
-        <!--hidden fields that get updated when a user updates/deletes a fridge item -->
-        <!--only want to update the fields that actually changed -->
-        <input type="hidden" id="delete-fields"></input>
-        <input type="hidden" id="update-fields"></input>
-        <!--May want to remove these from helper functions and add them to the Route -->
-        <input type="hidden" id="labels" value ="{{{labels user.ingredients}}}"></input>
-        <input type="hidden" id="quantities" value ="{{{quantities user.ingredients}}}"></input>
-        <input type="hidden" id="categories" value ="{{{categories user.ingredients}}}"></input>
-        <input type="hidden" id="category_count" value ="{{{category_count user.ingredients}}}"></input>
-        <table>
-        <tr><th></th><th>Category</th><th>Product Name</th><th>Quantity</th><th>Delete</th></th></tr>
-         {{#each user.ingredients as |ingredient| }}
-         {{>fridge-details}}         
-        {{/each}}
-    </table>
-    <button type="submit">Update</button>
-    </form>
-
-    
-
-    {{else}}
-        Empty fridge!
-        
-    {{/if}}
-</section>
-
-<figure class="chart">
-  <!--PRODUCT chart-->
-  <canvas id="productNameChart"></canvas>   
-</figure>
-
-<figure class="chart">
-  <!--CATEGORY Chart -->
-  <canvas id="categoryChart"></canvas>
-</figure>
+  </div>  <!--end main column -->
+</div> <!--End container -->
 
 <div class="form-group text-center">
+  <button class="btn btn-primary" type="submit">Update</button>
   <button class="btn btn-primary" type="button" id="selections-button">Return to Selections</button>
 </div> 
 
@@ -50,7 +65,10 @@
 <div id="dialog" title="Validation" class="hidden">
     <p id="dialog-error-msg">Please enter your content.</p>
 </div>
-<script src="/js/fridge.js"></script> 
+
+
+
+ <script src="/js/fridge.js"></script> 
 <!--
 <script type="module" src="/js/chart-fridge.js"></script> 
 -->
@@ -84,7 +102,6 @@
     
 //CATEGORY Chart
 const ctxCategory = document.getElementById('categoryChart');
-  
 const categories = document.getElementById("categories").value.split(",");
 const categoryCount = document.getElementById("category_count").value.split(",");
   new Chart(ctxCategory, {
@@ -106,11 +123,6 @@ const categoryCount = document.getElementById("category_count").value.split(",")
       }
     }
   });
-
-
-
-
-
 </script>
 
 <script src="/js/transfers/transferToSelections.js"></script>
