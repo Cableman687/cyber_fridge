@@ -92,8 +92,7 @@ router.get('/addrecipe', withAuth, (req, res) => {
 router.get('/addrecipeingredient', withAuth, async (req, res) => {
   
   try {
-    console.log("PARAMS ID " + req.query.id);
-    console.log("PARAMS NAME" + req.query.name);
+    
     //GET THE INGREDIENTS FROM USERS FRIDGE TO USE
     //IN DROP DOWN IN FORM WHEN ADDING INGREDIENTS
     const userData = await User.findOne({
@@ -134,28 +133,14 @@ router.get('/addrecipeingredient', withAuth, async (req, res) => {
   
    
     const recipes = recipeData.map((project) => project.get({plain: true}));
+    console.log("*********recipes********");
     console.log(recipes);
-    //console.table(recipes.ingredients);
-//console.log(recipes[0].ingredients);
-/*
-    const ingredientData = await RecipeIngredient.findAll({
-      where: { recipe_id: req.query.id},
-    });
-*/
-    /*
-    const recipe_ingredients = [];
-    if (ingredientData) {
-       recipe_ingredients = ingredientData.map((ingredient) => ingredient.get({ plain: true }));
-    } 
-    */
-    
-//console.log("RECIPE ingredients !!! " + recipe_ingredients);
-    //console.log(req.params.id);
+    console.log("*********recipes********");
+
     res.render('pages/addrecipeingredient', {
       // Pass the logged in flag to the template
       logged_in: req.session.logged_in,
       user_name: req.session.user_name,
-      /*recipe_id: req.params.id,*/
       recipe_id: req.query.id,
       recipe_name: req.query.name,
       user,

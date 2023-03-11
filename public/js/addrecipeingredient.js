@@ -18,25 +18,38 @@ const addRecipeIngredientHandler = async (event) => {
     
     console.log(recipe_id, recipe_name, ingredient_id, ingredient_quantity);
 
-    
     if (recipe_id && ingredient_id && ingredient_quantity) {
-      // Send a POST request to the API endpoint to create comment
-        const response = await fetch('/api/recipes/addrecipeingredient', {
-        method: 'POST',
-        body: JSON.stringify({ recipe_id, ingredient_id, ingredient_quantity }),
-        headers: { 'Content-Type': 'application/json' },
-      });
+      if (ingredient_id != "" & ingredient_quantity != "") {
+              // Send a POST request to the API endpoint to create comment
+              const response = await fetch('/api/recipes/addrecipeingredient', {
+                method: 'POST',
+                body: JSON.stringify({ recipe_id, ingredient_id, ingredient_quantity }),
+                headers: { 'Content-Type': 'application/json' },
+              }).then(function (response) {
+                //convert to JSON
+                return response.json();
+              })
+              .then(function (data) {
+                  console.log(data.id);   
+                  //let ingredient_id = data.id; 
+                  document.location.replace(`/addrecipeingredient?id=${recipe_id}&name=${recipe_name}`);
+                  
+            });
+      } else {
+        showError("Please enter enter all ingredient details");
+      }
+  
       //alert(response.json().id);
       //console.log("RESPONSE " + JSON.stringify(response));
      // console.log("response - " + response.json());
-      if (response.ok) {
-        // If successful, redirect the browser to the home page
-        //const new_id = JSON.parse(response).id;
-        //alert(new_id);
-        document.location.replace("/addrecipeingredient?id=2&name=recipe 2");
-      } else {
-        alert(response.statusText);
-      }
+      // if (response.ok) {
+      //   // If successful, redirect the browser to the home page
+      //   //const new_id = JSON.parse(response).id;
+      //   //alert(new_id);
+      //   document.location.replace("/addrecipeingredient?id=2&name=recipe 2");
+      // } else {
+      //   alert(response.statusText);
+      // }
     } else {
       //if nothing entered in form inform user - validation
       showError("Please enter the recipe name before adding ingredients");

@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Recipe , Ingredient , RecipeIngredient} = require('../../models');
 
+//const router = require("../../views/pages/")
 //update several ingredient based on recipe id
 router.put('/:id', async(req, res) => {
     try {
@@ -21,18 +22,15 @@ router.put('/:id', async(req, res) => {
   //create new Recipe
 router.post('/addrecipe', async (req, res) => {
   try {
-    
+    // console.log("ADD RECIPE");
     const newRecipe = await Recipe.create({
       ...req.body,
       "user_id" : req.session.user_id,
+      
     });
    
-    //const recipe = newRecipe.get({ plain: true })
-    //console.log("RECIPE - " + recipe);
-   // console.log("STRINGIFY - " + JSON.stringify(newRecipe));
-   // console.log("NEWRECIPE - " + newRecipe);
-  //console.log(newRecipe);
     res.status(200).json(newRecipe);
+    
   } catch (err) {
     res.status(400).json(err);
   }
@@ -85,8 +83,6 @@ router.delete('recipe/:id', async (req, res) => {
         ...req.body,
         //"user_id" : req.session.user_id,
       });
-     
-      //const recipeingredient = newRecipeIngredient.get({ plain: true })
       
       res.status(200).json(newRecipeIngredient);
     } catch (err) {
