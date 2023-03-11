@@ -10,23 +10,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body class="p-3 m-0 border-0 bd-example">
-   
+<body>
+
     {{!-- This is a recipe card. It shows on page all recipes --}}
-    {{#each recipes as |recipe| }}
-    <div class="card">
-        <div class="card-header">
-            Recipe
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {{#each recipes as |recipe| }}
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    Recipe
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{recipe.name}}</h5>
+                    <p class="card-text">{{recipe.user_id}}.</p>
+                    {{!-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+                </div>
+            </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">{{recipe.name}}</h5>
-            {{!-- <p class="card-text">{{recipe.description}}.</p> --}}
-            {{!-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
-
-        </div>
+        {{/each}}
     </div>
-    {{/each}}
-
 </body>
 
 </html>
