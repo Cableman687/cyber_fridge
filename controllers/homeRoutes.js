@@ -268,19 +268,10 @@ router.get('/recipes/:id', async (req, res) => {
     user_name: req.session.user_name,
   });
 
-  ///--old
-  // let recipeArray = recipes[0].ingredients;
-  // let requiredIngredients = [];
-
-  // for(var i = 0; i < recipeArray.length; i++){
-  //   console.log(recipes[0].ingredients[i].dataValues.name);
-  //   requiredIngredients.push(recipes[0].ingredients[i].dataValues.name);
-  // }
-
-  // console.log(recipes[0].ingredients[0].dataValues.name);
-  // console.log(requiredIngredients);
 
 });
+
+
 
 
 module.exports = router;
