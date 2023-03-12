@@ -1,10 +1,21 @@
-{{#each users as |user| }}
-<div class="row align-center mb-5">
-  <div class="col-md-6">
-    <h2>{{{get_emoji}}} {{user.name}}</h2>
-  </div>
-  <div class="col-md-6">
-    <h3><a href="mailto:{{user.email}}">{{user.email}}</a></h3>
-  </div>
-</div>
-{{/each}}
+
+<section class="text-end">
+    <nav class="navbar justify-content-end text-end">  
+        <ul class="navbar-nav text-end">
+            <li class="nav-item">
+                <button type="button" class="btn btn-outline-success fridge-button col-md-12 p-2 m-2">My Fridge</button>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn btn-outline-success recipes-button col-md-12 p-2 m-2">My Recipes</button>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn btn-outline-success add-button col-md-12 p-2 m-2">Add Ingredients</button>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn btn-outline-success recipe-button col-md-12 p-2 m-2">Add Recipe</button>
+            </li>
+        </ul>
+    </nav>
+</section>
+
+

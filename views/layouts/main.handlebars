@@ -14,19 +14,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="backgroundimg">
   <header class="display-flex justify-flex-start align-center p-2 text-center">
 
     <!-- Only display the logout button if the user is logged in -->
     {{#if logged_in}}
     
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">  
-      <button type="button" class="btn btn-outline-success" id="fridge-button">My Fridge</button>
-      <button type="button" class="btn btn-outline-success" id="recipes-button">My Recipes</button>
-      <button type="button" class="btn btn-outline-success" id="add-button">Add Ingredients</button>
-      <button type="button" class="btn btn-outline-success" id="recipe-button">Add Recipe</button>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <a class="main-title  me-4" href="/">CyberFridge</a>
+      <button type="button" class="btn btn-outline-success fridge-button  m-1">My Fridge</button>
+      <button type="button" class="btn btn-outline-success recipes-button m-1">My Recipes</button>
+      <button type="button" class="btn btn-outline-success add-button m-1">Add Ingredients</button>
+      <button type="button" class="btn btn-outline-success recipe-button m-1">Add Recipe</button>
       <button type="button" class="btn btn-secondary " id="logout">logout</button>
-      <div class="p-3">{{user_name}}</div>
+      <div class="ps-3">{{user_name}}</div>
     </nav>
     
     {{/if}}

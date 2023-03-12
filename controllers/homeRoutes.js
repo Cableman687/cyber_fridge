@@ -39,7 +39,8 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
   try{
     if (req.session.logged_in) {
-      res.redirect('/');
+      res.redirect('/fridge');
+      aler("You are already logged in!");
     } else {
       res.render('pages/signup');
     }
@@ -48,23 +49,6 @@ router.get('/signup', (req, res) => {
     res.status(500).json(err);
   }
   
-
-});
-
-//display page with options - add food, view fridge, view recipes, what can I cook
-router.get('/selections', withAuth, (req, res) => {
-  
-  try {
-    
-    res.render('pages/selections', {
-      // Pass the logged in flag to the template
-      logged_in: req.session.logged_in,
-      user_name: req.session.user_name,
-    });
-    return;
-  } catch(err) {
-    res.status(500).json(err);
-  }
 
 });
 

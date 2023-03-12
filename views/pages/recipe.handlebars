@@ -21,8 +21,12 @@
                     Recipe
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">{{recipe.name}}</h5>
-                    <p class="card-text">{{recipe.user_id}}.</p>
+                    <a href="/recipes/{{recipe.id}}">
+                        <h5 class="card-id">{{recipe.id}}</h5>
+                        <h5 class="card-title">{{recipe.name}}</h5>
+                    </a>
+                    
+                    
                     {{!-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
                 </div>
             </div>
