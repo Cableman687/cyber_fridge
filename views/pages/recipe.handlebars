@@ -12,19 +12,13 @@
 
 <body>
 
-       {{!-- This is a recipe card. It shows on page all recipes --}}
+    <p class="main-title">My Recipes</p>
+    {{!-- This is a recipe card. It shows on page all recipes --}}
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {{#each recipes as |recipe| }}
+        <div class="col">
+            <div class="card">
 
-    <div class="row row-cols-1 row-cols-lg-1 g-3">
-
-        {{!-- <div class="col-2">
-            <img src="images/istockphoto-873829010-1024x1024-transformed.jpeg" class="img-fluid rounded float-star"
-                alt="fridge">
-        </div> --}}
-
-     
-            {{#each recipes as |recipe|}}
-            <div class="col">
-            <div class="card mb-3">
                 <div class="card-header">
                     Recipe
                 </div>

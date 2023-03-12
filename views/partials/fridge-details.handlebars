@@ -4,7 +4,7 @@
             <td>{{category}}</td>
             <td>{{name}}</td>
             <!--update 'update-fields' with id and quantity when quantity changes - see onchange updateThis -->
-            <td><input id="quantity_{{id}}" class="form-control" value="{{quantity}}" onchange="updateThis('{{id}}')" size="10"></input></td>  
+            <td class="col-md-2"><input id="quantity_{{id}}" class="form-control col-md-2" value="{{quantity}}" onchange="updateThis('{{id}}')" ></input></td>  
             <!--update 'delete-fields' with id when checkbox is checked - see onclick deleteThis -->
             <td><input type="checkbox" id="delete_{{id}}" onclick="deleteThis('{{id}}')"></input></td>
          </tr>
