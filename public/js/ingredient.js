@@ -17,8 +17,7 @@ const addIngredientHandler = async (event) => {
     
     if (category && name && quantity) {
       // Send a POST request to the API endpoint to create comment
-      //console.log("add Ingredient Handler");
-      //console.log(JSON.stringify({ category, name, quantity}));
+      
       const response = await fetch('/api/ingredients', {
         method: 'POST',
         body: JSON.stringify({ category, name, quantity}),
@@ -34,12 +33,7 @@ const addIngredientHandler = async (event) => {
     } else {
       //if nothing entered in form inform user - validation
       showError("Please complete the form before submitting");
-      /*
-      document.querySelector('#dialog').classList.remove("hidden");
-       $( function() {
-             $( "#dialog" ).dialog();
-       } );
-       */
+
     }
   };
 
