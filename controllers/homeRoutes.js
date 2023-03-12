@@ -169,7 +169,7 @@ router.get('/fridge', withAuth, async(req, res) => {
         },
       ],
      // 
-      //order: [['category', 'ASC']],
+     // order: [['category', 'ASC']],
     });
     //console.log(ingredientData);
     //const ingredients = ingredientData.map((ingredient) => ingredient.get({ plain: true }));
