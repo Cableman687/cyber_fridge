@@ -24,6 +24,13 @@ form .form-group {
   color: black;
 }
 
+.login-title {
+  font-family: Dancing Script;
+  font-weight: 700;
+  font-size: 8rem;
+  color: black;
+}
+
 .chart {
   height: 100%;
   width: 100%;
