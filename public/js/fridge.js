@@ -71,7 +71,7 @@ async function deleteOneIngredient(id, quantity) {
 
 const updateIngredientHandler = async (event) => {
   event.preventDefault();
-
+console.log("update");
   // Collect values from the comment form
   //get values from hidden fields - these are the ingredients to actually updated/delete
   let updateQuantity = document.querySelector('#update-fields').value.trim().split(";");
