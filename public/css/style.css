@@ -25,6 +25,13 @@ form .form-group {
 }
 
 .chart {
-  height: 30%;
-  width: 30%;
+  height: 50%;
+  width: 50%;
+}
+
+.main-title {
+  font-family: Dancing Script;
+  font-weight: 700;
+  font-size: 5rem;
+  color: black;
 }
