@@ -108,6 +108,7 @@ router.get('/addrecipeingredient', withAuth, async (req, res) => {
     
     const user = userData.get({ plain: true });
 
+    //get all the ingredients added already to this recipe
     const recipeData = await Recipe.findAll({
       where: { id: req.query.id },
       include : [
@@ -132,10 +133,26 @@ router.get('/addrecipeingredient', withAuth, async (req, res) => {
     }); 
   
    
-    const recipes = recipeData.map((project) => project.get({plain: true}));
-    console.log("*********recipes********");
-    console.log(recipes);
-    console.log("*********recipes********");
+    const recipes = recipeData.map((rec) => rec.get({plain: true}));
+   //check if we have ingredients or just a recipe name
+   //create new array to pass back to handlebars - contains name, category and quantity only
+    if (recipes[0].ingredients.length && recipes[0].recipe_ingredients.length) {
+      
+      currentingredients = [];
+      for (i=0; i<recipes[0].ingredients.length; i++) {
+        let newIngredient = {
+          "name": recipes[0].ingredients[i].name,
+          "category": recipes[0].ingredients[i].category,
+          "quantity": recipes[0].recipe_ingredients[i].ingredient_quantity
+        }
+        currentingredients.push(newIngredient);
+      }
+      
+    }else {
+      //got no previous ingredients
+      currentingredients = [];
+    }
+    
 
     res.render('pages/addrecipeingredient', {
       // Pass the logged in flag to the template
@@ -144,7 +161,7 @@ router.get('/addrecipeingredient', withAuth, async (req, res) => {
       recipe_id: req.query.id,
       recipe_name: req.query.name,
       user,
-      recipes,
+      currentingredients
     });
     return;
   //}
@@ -156,7 +173,7 @@ router.get('/addrecipeingredient', withAuth, async (req, res) => {
 //*************END ADD Recipes************ */
 
 
-//display page to allow user add ingredient - category, name, quantity
+//display page to allow user add ingredient to fridge - category, name, quantity
 router.get('/addingredient', withAuth, (req, res) => {
   
   try {
@@ -187,8 +204,7 @@ router.get('/fridge', withAuth, async(req, res) => {
      // 
      // order: [['category', 'ASC']],
     });
-    //console.log(ingredientData);
-    //const ingredients = ingredientData.map((ingredient) => ingredient.get({ plain: true }));
+    
     const user = userData.get({ plain: true });
     console.log(user.ingredients);
     res.render('pages/fridge', {

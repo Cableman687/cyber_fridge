@@ -1,20 +1,17 @@
 const router = require('express').Router();
 const { RecipeIngredient, IngredientUser } = require('../../models');
-//const withAuth = require('../../utils/auth');
 
 //create new ingredient
-//called from public/js/newpost.js
 router.post('/', async (req, res) => {
   try {
-    //console.log("ingredientRoutes - create");
-    //create new ingredient and include current users id from session
+    //create new recipe ingredient 
     
     const newRecipeIngredient = await RecipeIngredient.create({
       ...req.body,
     });
    
     const recipeingredient = newRecipeIngredient.get({ plain: true })
-    
+    //add to link table
     const ingredientUser = await IngredientUser.create({
       "ingredient_id" : recipeingredient.id,
       "user_id" : req.session.user_id,
