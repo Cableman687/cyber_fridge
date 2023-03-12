@@ -25,15 +25,7 @@ function countOccurences(theArray, prop) {
 
 module.exports = {
   get_emoji: (category) => {
-    /*
-    const randomNum = Math.random();
-    let book = "📗";
-
-    if (randomNum > 0.7) {
-      book = "📘";
-    } else if (randomNum > 0.4) {
-      book = "📙";
-    }*/
+   
     if (category == "Meat") {
       icon = "🥩";
     } else if (category == "Fish") {
@@ -71,7 +63,22 @@ module.exports = {
   category_count: function(context) {
     let newObject = countOccurences(context, "category");
     return Object.keys(newObject).map(function(key){return newObject[key]})
-  }
+  },
   
-
+  category_colours: function (context) { return context.map(function (obj) {
+    console.log(obj.category);
+    if (obj.category == "Meat"){
+      return "#D22B2B";
+    } else if (obj.category == "Fish"){
+      return "#0096FF";
+    } else if (obj.category == "Vegetables"){
+      return "#61B329";
+    } else if (obj.category == "Dairy"){
+      return "#EADDCA";
+    } else if (obj.category == "Fruit"){
+      return "#FFEA00";
+    } else {
+      return "Grey";
+    }
+      });  },
   };
