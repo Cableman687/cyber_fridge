@@ -16,6 +16,7 @@
               <input type="hidden" id="quantities" value ="{{{quantities user.ingredients}}}"></input>
               <input type="hidden" id="categories" value ="{{{categories user.ingredients}}}"></input>
               <input type="hidden" id="category_count" value ="{{{category_count user.ingredients}}}"></input>
+               <input type="hidden" id="category_colours" value ="{{{category_colours user.ingredients}}}"></input>
               <table class="table">
                 <thead class="thead-dark">
                   <tr><th></th><th></th><th scope="col">Category</th><th>Product Name</th><th>Quantity</th><th>Delete</th></th></tr>
@@ -31,9 +32,10 @@
           
 
           {{else}}
-          {{!-- <div class="row text-center">
-              <h2>Your Fridge is Empty!</h2>
+           <div class="row text-center">
+              <h5>Your Fridge is Empty! Use the Add Ingredients button to start adding content to your fridge.</h2>
           </div>
+          {{!--
           <div class="row text-center">
               <h4>Add Ingredients Below!</h4>
           </div>
@@ -62,13 +64,6 @@
 
   </div>  <!--end main column -->
 </div> <!--End container -->
-<!--
-<div class="form-group text-center">
-  <button class="btn btn-primary" type="submit">Update</button>
-  <button class="btn btn-primary add-button" type="button">Add Ingredients Now!</button>
-
-</div> 
--->
 
 <!--dialog for validation -->
 <div id="dialog" title="Validation" class="hidden">
@@ -78,9 +73,6 @@
 
 
  <script src="/js/fridge.js"></script> 
-<!--
-<script type="module" src="/js/chart-fridge.js"></script> 
--->
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!--script for chart -->
@@ -97,7 +89,9 @@
             datasets: [{
               label: '# of Ingredients',
               data: quantities,
-              borderWidth: 1
+              borderWidth: 1,
+              /*backgroundColor: "rgb(255, 191, 0)", */
+              /*backgroundColor: ["red", "blue", "green", "blue", "red", "blue"], */
             }]
           },
           options: {
@@ -113,15 +107,17 @@
 const ctxCategory = document.getElementById('categoryChart');
 const categories = document.getElementById("categories").value.split(",");
 const categoryCount = document.getElementById("category_count").value.split(",");
+const categoryColours = document.getElementById("category_colours").value.split(",");
   new Chart(ctxCategory, {
-    type: 'bar',
+    type: 'pie',
     data: {
       //labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
       labels: categories,
       datasets: [{
         label: 'by Category',
         data: categoryCount,
-        borderWidth: 1
+        borderWidth: 1,
+        backgroundColor: categoryColours, 
       }]
     },
     options: {
