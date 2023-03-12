@@ -22,15 +22,19 @@
 
     <!-- Only display the logout button if the user is logged in -->
     {{#if logged_in}}
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary justify-content-between">
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <a class="main-title me-4" href="/">CyberFridge</a>
-      <button type="button" class="btn btn-outline-success fridge-button  m-1">My Fridge</button>
-      <button type="button" class="btn btn-outline-success recipes-button m-1">My Recipes</button>
-      <button type="button" class="btn btn-outline-success add-button m-1">Add Ingredients</button>
-      <button type="button" class="btn btn-outline-success recipe-button m-1">Add Recipe</button>
-      <button type="button" class="btn btn-secondary " id="logout">logout</button>
-      <div class="ps-3">{{user_name}}</div>
+        <a class="main-title me-4" href="/">CyberFridge</a>
+        <form class="text-end">
+          <button type="button" class="btn btn-outline-success fridge-button  m-1">My Fridge</button>
+          <button type="button" class="btn btn-outline-danger recipes-button m-1">My Recipes</button>
+          <button type="button" class="btn btn-outline-info add-button m-1">Add Ingredients</button>
+          <button type="button" class="btn btn-outline-primary recipe-button m-1">Add Recipe</button>
+          <button type="button" class="btn btn-secondary " id="logout">logout</button>
+          <button type="button" class="btn btn-light me-2" style="font-weight:bold">{{user_name}}</button>
+          {{!-- <div class="ps-3"></div>   --}}
+        </form>
     </nav>
 
     {{/if}}
