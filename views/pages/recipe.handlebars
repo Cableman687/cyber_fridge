@@ -14,15 +14,16 @@
 
        {{!-- This is a recipe card. It shows on page all recipes --}}
 
-    <div class="row row-cols-2 row-cols-lg-3 g-3">
+    <div class="row row-cols-1 row-cols-lg-1 g-3">
 
-        <div class="col-2">
+        {{!-- <div class="col-2">
             <img src="images/istockphoto-873829010-1024x1024-transformed.jpeg" class="img-fluid rounded float-star"
                 alt="fridge">
-        </div>
+        </div> --}}
 
-        <div class="col-8">
+     
             {{#each recipes as |recipe|}}
+            <div class="col">
             <div class="card mb-3">
                 <div class="card-header">
                     Recipe
@@ -34,8 +35,9 @@
                     </a>
                 </div>
             </div>
+            </div>
             {{/each}}
-        </div>
+  
     </div>
 </body>
 
