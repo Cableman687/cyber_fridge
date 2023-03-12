@@ -5,4 +5,10 @@ const transferAddRecipe   = async (event) => {
 
 };
   
-document.querySelector('#recipe-button').addEventListener('click', transferAddRecipe);
+// document.querySelector('#recipe-button').addEventListener('click', transferAddRecipe);
+
+const recipeButtons = document.querySelectorAll('.recipe-button');
+
+recipeButtons.forEach((curr) => {
+    curr.addEventListener('click', transferAddRecipe);
+})

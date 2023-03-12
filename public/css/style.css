@@ -32,6 +32,20 @@ form .form-group {
 .main-title {
   font-family: Dancing Script;
   font-weight: 700;
-  font-size: 5rem;
+  font-size: 2rem;
   color: black;
+}
+
+.backgroundimg { 
+  /* The image used */
+  background-image: url('../images/fridge.png');
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
