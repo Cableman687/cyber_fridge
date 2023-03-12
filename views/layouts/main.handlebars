@@ -23,15 +23,91 @@
     <!-- Only display the logout button if the user is logged in -->
     {{#if logged_in}}
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    {{!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
       <a class="main-title me-4" href="/">CyberFridge</a>
+
       <button type="button" class="btn btn-outline-success fridge-button  m-1">My Fridge</button>
       <button type="button" class="btn btn-outline-success recipes-button m-1">My Recipes</button>
       <button type="button" class="btn btn-outline-success add-button m-1">Add Ingredients</button>
       <button type="button" class="btn btn-outline-success recipe-button m-1">Add Recipe</button>
-      <button type="button" class="btn btn-secondary " id="logout">logout</button>
+
+      <button type="button" class="btn btn-secondary" id="logout">logout</button>
       <div class="ps-3">{{user_name}}</div>
+
+    </nav> --}}
+
+
+    <nav class="navbar navbar-expand-sm bg-body-tertiary">
+      <form class="container-fluid ">
+
+        {{!-- <a class="main-title me-4" href="/">CyberFridge</a>
+
+        <button type="button" class="btn btn-outline-success fridge-button  m-1">My Fridge</button>
+        <button type="button" class="btn btn-outline-success recipes-button m-1">My Recipes</button>
+        <button type="button" class="btn btn-outline-success add-button m-1">Add Ingredients</button>
+        <button type="button" class="btn btn-outline-success recipe-button m-1">Add Recipe</button>
+
+        <button type="button" class="btn btn-secondary" id="logout">logout</button>
+        <div class="ps-3">{{user_name}}</div> --}}
+
+
+        {{!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> --}}
+        <form class="d-flex justify-content-end">
+          <a class="main-title me-4 align-self-center" href="/">CyberFridge</a>
+        </form>
+
+        <ul class="d-flex flex-row mb-3 list-group-horizontal text-nowrap ">
+          <li class="nav-item">
+            <button type="button" class="btn btn-outline-success fridge-button  m-1">My Fridge</button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-outline-success recipes-button m-1">My Recipes</button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-outline-success add-button m-1">Add Ingredients</button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-outline-success recipe-button m-1">Add Recipe</button>
+          </li>
+        </ul>
+      </form>
+
+
+      <form class="d-flex justify-content-end">
+        <ul class="navbar justify-content-start">
+          <li class="nav-item">
+            <button type="button" class="btn btn-secondary" id="logout">logout</button>
+          </li>
+          <li class="nav-item">
+            <div class="ps-3 align-self-center">{{user_name}}</div>
+          </li>
+
+        </ul>
+
+      </form>
     </nav>
+
+
+
+
+
+
+
+
+
+
+
+    </nav>
+
+
+
+
+
 
     {{/if}}
   </header>
@@ -45,14 +121,10 @@
           alt="fridge">
       </div>
 
-      <div class="col-8">
+      <div class="col-10">
         {{{ body }}}
       </div>
     </div>
-
-
-
-
 
   </main>
 
