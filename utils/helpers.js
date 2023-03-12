@@ -24,7 +24,8 @@ function countOccurences(theArray, prop) {
 
 
 module.exports = {
-  get_emoji: () => {
+  get_emoji: (category) => {
+    /*
     const randomNum = Math.random();
     let book = "📗";
 
@@ -32,9 +33,23 @@ module.exports = {
       book = "📘";
     } else if (randomNum > 0.4) {
       book = "📙";
+    }*/
+    if (category == "Meat") {
+      icon = "🥩";
+    } else if (category == "Fish") {
+      icon = "🐠";
+    } else if (category == "Vegetables") {
+      icon = "🥕";
+    } else if (category == "Fruit") {
+      icon = "🍋";
+    } else if (category == "Dairy") {
+      icon = "🥛";
+    } else if (category == "Condiments") {
+      icon = "🧂";
+    } else {
+      icon = "🥄";
     }
-
-    return `<span for="img" aria-label="book">${book}</span>`;
+    return `<span for="img" aria-label="food category">${icon}</span>`;
   },
   json: function (context) { return JSON.stringify(context);  },
   labels: function (context) { return context.map(function (obj) {

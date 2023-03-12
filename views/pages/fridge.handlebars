@@ -2,7 +2,7 @@
 
   <div class="d-flex flex-column">
       
-      <section class="col-sm">
+      <section class="col">
           <!--Number of fridge items {{ingredients.length}} -->
         {{#if user.ingredients}}
           <form id="update-ingredients">
@@ -17,14 +17,14 @@
               <input type="hidden" id="category_count" value ="{{{category_count user.ingredients}}}"></input>
               <table class="table">
                 <thead class="thead-dark">
-                  <tr><th></th><th scope="col">Category</th><th>Product Name</th><th>Quantity</th><th>Delete</th></th></tr>
+                  <tr><th></th><th></th><th scope="col">Category</th><th>Product Name</th><th>Quantity</th><th>Delete</th></th></tr>
                 </thead>
               
               {{#each user.ingredients as |ingredient| }}
               {{>fridge-details}}         
               {{/each}}
           </table>
-          
+            <button class="btn btn-primary" type="submit">Update</button>
           </form>
 
           
@@ -57,7 +57,7 @@
 </div> <!--End container -->
 
 <div class="form-group text-center">
-  <button class="btn btn-primary" type="submit">Update</button>
+
   <button class="btn btn-primary" type="button" id="selections-button">Return to Selections</button>
 </div> 
 
