@@ -17,6 +17,7 @@ async function getFact() {
   }).then(function(data){
     console.log(data.contents.fact);
     factEl.textContent = data.contents.fact;
+
   })
 
   
