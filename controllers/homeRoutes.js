@@ -137,7 +137,8 @@ router.get('/addrecipeingredient', withAuth, async (req, res) => {
       currentingredients = [];
     }
     
-
+    
+    const adjustedName = req.query.name.replace("%26", "&");
     res.render('pages/addrecipeingredient', {
       // Pass the logged in flag to the template
       logged_in: req.session.logged_in,
@@ -190,7 +191,7 @@ router.get('/fridge', withAuth, async(req, res) => {
     });
     
     const user = userData.get({ plain: true });
-    console.log(user.ingredients);
+    
     res.render('pages/fridge', {
       user,
       // Pass the logged in flag to the template
@@ -215,7 +216,7 @@ router.get('/recipes', withAuth, async(req, res) => {
 
     
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-    console.log(recipes);
+    
     res.render('pages/recipe', {
       recipes,
       // Pass the logged in flag to the template
@@ -257,9 +258,6 @@ router.get('/recipes/:id', async (req, res) => {
 
  
   const recipes = recipeData.map((project) => project.get({plain: true}));
-
-  console.table(recipes);
-  console.log(recipes[0].ingredients);
 
   res.render('pages/viewRecipeContents', {
     recipes,

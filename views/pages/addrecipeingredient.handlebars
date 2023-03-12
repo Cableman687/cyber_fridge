@@ -3,6 +3,24 @@
     <h2>{{recipe_name}}</h2>
 
     <form class="form" id="new-ingredient">
+
+        <div class="form-group">
+            <label for="ingredient_id">Ingredient  Name:</label>
+            <select id="ingredient_id" name="ingredient_id" class="form-control" >
+            <option value="" selected></option>
+            <!--show drop down values-->
+            {{#each user.ingredients as |ingredient| }}
+                {{>recipe-ingredient-select}}         
+            {{/each}}
+            </select>
+        </div>
+       
+        <div class="form-group">
+            <label for="ingredient_quantity">Ingredient Quantity:</label>
+            <input type="text" id="ingredient_quantity" class="form-control"/>        
+        </div>
+        <button class="btn btn-primary" type="submit">Add Ingredient</button>
+
         <!--Dont display if no ingredients have been added yet-->
         {{#if currentingredients}}
         <table class="table">
@@ -21,24 +39,6 @@
             <input type="hidden" value="{{recipe_name}}" class="form-control" id="recipe_name" />
         </div>
         
-        <div class="form-group">
-            <label for="ingredient_id">Ingredient  Name:</label>
-            <select id="ingredient_id" name="ingredient_id" class="form-control" >
-            <option value="" selected></option>
-            <!--show drop down values-->
-            {{#each user.ingredients as |ingredient| }}
-                {{>recipe-ingredient-select}}         
-            {{/each}}
-            </select>
-        </div>
-       
-        <div class="form-group">
-            <label for="ingredient_quantity">Ingredient Quantity:</label>
-            <input type="text" id="ingredient_quantity" class="form-control"/>        
-        </div>
-        
-
-        <button class="btn btn-primary" type="submit">Add Ingredient</button>
        
     </form>
 </section>

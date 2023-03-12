@@ -23,7 +23,7 @@ router.post('/addrecipe', async (req, res) => {
   try {
     
     const newRecipe = await Recipe.create({
-      ...req.body,
+      "name": req.body.name.replace("%26", "&"),
       "user_id" : req.session.user_id,
       
     });

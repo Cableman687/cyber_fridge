@@ -49,3 +49,7 @@ form .form-group {
   background-size: cover;
 }
 
+input.form-fixer {
+  padding: 1px;
+}
+

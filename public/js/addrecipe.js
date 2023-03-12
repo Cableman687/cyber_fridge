@@ -11,10 +11,11 @@ const addRecipeHandler = async (event) => {
     event.preventDefault();
   
     // Collect values from the comment form
+    //ensure the name does not include &
+    const  name = document.querySelector('#recipe-name').value.trim().replace("&", "%26");
     
-    const  name = document.querySelector('#recipe-name').value.trim();
     
-        if (name) {
+    if (name) {
           // Send a POST request to the API endpoint to create comment
             const response = await fetch('/api/recipes/addrecipe', {
             method: 'POST',
