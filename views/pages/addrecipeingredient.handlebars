@@ -1,16 +1,20 @@
 <section>
     <h2>{{recipe_name}}</h2>
-<!--
-    {{recipe_ingredients}}
--->
-    <form class="form" id="new-ingredient">
-        
 
-        {{#each recipes.ingredients as |ingredient| }}
+    <form class="form" id="new-ingredient">
+        <!--Dont display if no ingredients have been added yet-->
+        {{#if currentingredients}}
+        <table class="table">
+            <thead class="thead-dark">
+                  <th></th><th scope="col">Category</th><th>Product Name</th><th>Quantity</th></tr>
+            </thead>
+        {{/if}}
+        <!--show each ingredient as row in table -->
+        {{#each currentingredients as |ingredient| }}
             {{> add-recipe-ingredients-details}}
-            {{!-- {{recipe.name}}
-            {{recipe.recipe_ingredient.ingredient_quantity}} --}}
         {{/each}}
+        </table>
+        
         <input type="hidden" id="recipe_id" value="{{recipe_id}}" />
         <div class="form-group">
             <input type="hidden" value="{{recipe_name}}" class="form-control" id="recipe_name" />
@@ -20,6 +24,7 @@
             <label for="ingredient_id">Ingredient  Name:</label>
             <select id="ingredient_id" name="ingredient_id" class="form-control" >
             <option value="" selected></option>
+            <!--show drop down values-->
             {{#each user.ingredients as |ingredient| }}
                 {{>recipe-ingredient-select}}         
             {{/each}}
@@ -33,6 +38,7 @@
         
 
         <button class="btn btn-primary" type="submit">Add Ingredient</button>
+       
     </form>
 </section>
 <!--dialog for validation -->

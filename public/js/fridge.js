@@ -6,7 +6,6 @@ function getCategories(obj, v) {
     // set the initial value as an object
   };
 
-  //console.log(myArray.reduce(getCategories));
  
 function showError(msg) {
   document.querySelector('#dialog-error-msg').innerHTML =msg;
@@ -71,7 +70,7 @@ async function deleteOneIngredient(id, quantity) {
 
 const updateIngredientHandler = async (event) => {
   event.preventDefault();
-console.log("update");
+
   // Collect values from the comment form
   //get values from hidden fields - these are the ingredients to actually updated/delete
   let updateQuantity = document.querySelector('#update-fields').value.trim().split(";");
@@ -98,6 +97,11 @@ console.log("update");
         const response = await updateOneIngredient(details[0], details[1] );
         //TO DO
         //what to do if one fails???
+        if (response.ok) {
+
+        } else {
+
+        }
       } 
     }
   } 
@@ -115,12 +119,8 @@ console.log("update");
     }
   } 
 
-  //if (response.ok) {
-    // If successful, redirect the browser to the home page
     document.location.replace('/fridge');
-  //} else {
-   // alert(response.statusText);
-  //}
+  
 };
 
 
