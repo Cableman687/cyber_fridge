@@ -9,21 +9,25 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="backgroundimg">
   <header class="display-flex justify-flex-start align-center p-2 text-center">
 
     <!-- Only display the logout button if the user is logged in -->
     {{#if logged_in}}
     
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">  
-      <button type="button" class="btn btn-outline-success" id="fridge-button">My Fridge</button>
-      <button type="button" class="btn btn-outline-success" id="recipes-button">My Recipes</button>
-      <button type="button" class="btn btn-outline-success" id="add-button">Add Ingredients</button>
-      <button type="button" class="btn btn-outline-success" id="recipe-button">Add Recipe</button>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <a class="main-title  me-4" href="/">CyberFridge</a>
+      <button type="button" class="btn btn-outline-success fridge-button  m-1">My Fridge</button>
+      <button type="button" class="btn btn-outline-success recipes-button m-1">My Recipes</button>
+      <button type="button" class="btn btn-outline-success add-button m-1">Add Ingredients</button>
+      <button type="button" class="btn btn-outline-success recipe-button m-1">Add Recipe</button>
       <button type="button" class="btn btn-secondary " id="logout">logout</button>
-      <div class="p-3">{{user_name}}</div>
+      <div class="ps-3">{{user_name}}</div>
     </nav>
     
     {{/if}}

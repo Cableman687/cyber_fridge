@@ -30,7 +30,13 @@
           
 
           {{else}}
-              Empty fridge!
+          {{!-- <div class="row text-center">
+              <h2>Your Fridge is Empty!</h2>
+          </div>
+          <div class="row text-center">
+              <h4>Add Ingredients Below!</h4>
+          </div>
+               --}}
               
           {{/if}}
       </section>
@@ -58,7 +64,7 @@
 
 <div class="form-group text-center">
   <button class="btn btn-primary" type="submit">Update</button>
-  <button class="btn btn-primary" type="button" id="selections-button">Return to Selections</button>
+  <button class="btn btn-primary add-button" type="button">Add Ingredients Now!</button>
 </div> 
 
 <!--dialog for validation -->
@@ -125,5 +131,5 @@ const categoryCount = document.getElementById("category_count").value.split(",")
   });
 </script>
 
-<script src="/js/transfers/transferToSelections.js"></script>
+
 

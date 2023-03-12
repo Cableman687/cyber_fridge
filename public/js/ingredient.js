@@ -27,7 +27,7 @@ const addIngredientHandler = async (event) => {
   
       if (response.ok) {
         // If successful, redirect the browser to the home page
-        document.location.replace('/selections');
+        document.location.replace('/fridge');
       } else {
         alert(response.statusText);
       }

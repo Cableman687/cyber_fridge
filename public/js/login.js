@@ -16,7 +16,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/selections');
+      document.location.replace('/fridge');
     } else {
       alert('Failed to log in');
     }
