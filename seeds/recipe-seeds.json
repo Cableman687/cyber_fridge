@@ -1,26 +1,10 @@
 [
-    {
-      "name": "Eggs on Toast",
-      "user_id" : "1"
-    },
-    {
-      "name": "Continental breakfast",
-      "user_id" : "2"
-    },
-    {
-      "name": "Fish and chips",
-      "user_id" : "3"
-    },
-    { "name": "Eggs and cheese on Toast",
-      "user_id" : "1"
-    },
-    {
-      "name": "Pasta bolognese",
-      "user_id" : "2"
-    },
-    {
-      "name": "Tortellini bolognese",
-      "user_id" : "3"
-    }
-
+  {
+    "name": "Eggs on Toast",
+    "user_id" : "1"
+  },
+  {
+    "name": "Scrambled Eggs",
+    "user_id" : "1"
+  }
 ]

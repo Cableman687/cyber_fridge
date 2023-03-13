@@ -62,18 +62,18 @@
           <a class="main-title me-4 align-self-center" href="/">CyberFridge</a>
         </form>
 
-        <ul class="d-flex flex-row mb-3 list-group-horizontal text-nowrap ">
+        <ul class="d-flex flex-row list-group-horizontal text-nowrap ">
           <li class="nav-item">
-            <button type="button" class="btn btn-outline-success fridge-button  m-1">My Fridge</button>
+            <button type="button" class="btn btn-outline-primary fridge-button  m-1">My Fridge</button>
           </li>
           <li class="nav-item">
             <button type="button" class="btn btn-outline-success recipes-button m-1">My Recipes</button>
           </li>
           <li class="nav-item">
-            <button type="button" class="btn btn-outline-success add-button m-1">Add Ingredients</button>
+            <button type="button" class="btn btn-outline-info add-button m-1">Add Ingredients</button>
           </li>
           <li class="nav-item">
-            <button type="button" class="btn btn-outline-success recipe-button m-1">Add Recipe</button>
+            <button type="button" class="btn btn-outline-danger recipe-button m-1">Add Recipe</button>
           </li>
         </ul>
       </form>
@@ -84,7 +84,7 @@
           <li class="nav-item">
             <button type="button" class="btn btn-secondary" id="logout">logout</button>
           </li>
-          <li class="nav-item">
+          <li class="nav-item me-3">
             <div class="ps-3 align-self-center">{{user_name}}</div>
           </li>
 
@@ -119,11 +119,10 @@
     <div class="row g-3">
 
       <div class="col-4">
-        <img src="images/istockphoto-873829010-1024x1024-transformed.jpeg" class="img-fluid rounded float-star"
-          alt="fridge">
+        <img src="images/istockphoto-873829010-1024x1024-transformed.jpeg" class="img-fluid rounded float-star" alt="fridge">
       </div>
 
-      <div class="col-10">
+      <div class="col-8">
         {{{ body }}}
       </div>
     </div>

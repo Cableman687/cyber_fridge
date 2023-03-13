@@ -1,49 +1,32 @@
 [
-    {
-      "category": "Fruit",
-      "name": "Apple",
-      "quantity" :"3"
-      
-    },
-    {
-      "category": "Meat",
-      "name": "Steak",
-      "quantity" :"1"
-      
-    },
-    {
-      "category": "Dairy",
-      "name": "Milk",
-      "quantity" :"1"
-      
-    },
-    {
-      "category": "Fruit",
-      "name": "Banana",
-      "quantity" :"3"
-      
-    },
-    {
-      "category": "Dairy",
-      "name": "Cheese",
-      "quantity" :"3"
-      
-    },
-    {
-      "category": "Dairy",
-      "name": "Eggs",
-      "quantity" :"32"
-      
-    },
-    {
-      "category": "Dairy",
-      "name": "Toast",
-      "quantity" :"42"
-      
-    },
-    {
-      "category": "Dairy",
-      "name": "Salt",
-      "quantity" :"54"
-    }
+  {
+    "category": "Meat",
+    "name": "Eggs",
+    "quantity" :"24"
+    
+  },
+  {
+    "category": "Other",
+    "name": "Bread",
+    "quantity" :"20"
+    
+  },
+  {
+    "category": "Condiments",
+    "name": "Salt",
+    "quantity" :"50"
+    
+  },
+  {
+    "category": "Dairy",
+    "name": "Butter",
+    "quantity" :"14"
+    
+  },
+  {
+    "category": "Dairy",
+    "name": "Milk",
+    "quantity" :"20"
+    
+  }    
 ]
