@@ -1,4 +1,4 @@
-
+//plan to move helpers from utils in here
 function getCategories(obj, v) {
     obj[v.category] = (obj[v.category] || 0) + 1;
     // return the updated object
@@ -6,7 +6,7 @@ function getCategories(obj, v) {
     // set the initial value as an object
   };
 
- 
+ //validation modal
 function showError(msg) {
   document.querySelector('#dialog-error-msg').innerHTML =msg;
   document.querySelector('#dialog').classList.remove("hidden");
@@ -71,7 +71,7 @@ async function deleteOneIngredient(id, quantity) {
 const updateIngredientHandler = async (event) => {
   event.preventDefault();
 
-  // Collect values from the comment form
+  // Collect values from the form
   //get values from hidden fields - these are the ingredients to actually updated/delete
   let updateQuantity = document.querySelector('#update-fields').value.trim().split(";");
   let updateDelete = document.querySelector('#delete-fields').value.trim().split(";");

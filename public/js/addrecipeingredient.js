@@ -1,3 +1,4 @@
+//pop modal to dsiplay errors
 function showError(msg) {
     document.querySelector('#dialog-error-msg').innerHTML =msg;
     document.querySelector('#dialog').classList.remove("hidden");
@@ -5,20 +6,21 @@ function showError(msg) {
              $( "#dialog" ).dialog();
        } );
 }
-
+//called when Add Ingredient button clicked
 const addRecipeIngredientHandler = async (event) => {
     event.preventDefault();
   
-    // Collect values from the comment form
+    // Collect values from the form
     
     const recipe_id = document.querySelector('#recipe_id').value.trim();
+    //watch out for "&"
     const recipe_name = document.querySelector('#recipe_name').value.trim().replace("&", "%26");
     const ingredient_id = $('#ingredient_id :selected').val();
     const ingredient_quantity = document.querySelector('#ingredient_quantity').value.trim();
 
     if (recipe_id && ingredient_id && ingredient_quantity) {
       if (ingredient_id != "" & ingredient_quantity != "") {
-              // Send a POST request to the API endpoint to create comment
+              // Send a POST request to the API endpoint to create recipe ingredient
               const response = await fetch('/api/recipes/addrecipeingredient', {
                 method: 'POST',
                 body: JSON.stringify({ recipe_id, ingredient_id, ingredient_quantity }),

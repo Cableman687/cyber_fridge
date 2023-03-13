@@ -1,3 +1,4 @@
+//used to show errors in pop up modal
 function showError(msg) {
     document.querySelector('#dialog-error-msg').innerHTML =msg;
     document.querySelector('#dialog').classList.remove("hidden");
@@ -11,7 +12,7 @@ const addRecipeHandler = async (event) => {
     event.preventDefault();
   
     // Collect values from the comment form
-    //ensure the name does not include &
+    //ensure the name does not include "&" - messes up params in URL if "&" is part of recipe name
     const  name = document.querySelector('#recipe-name').value.trim().replace("&", "%26");
     
     
