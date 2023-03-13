@@ -1,4 +1,6 @@
 //call API to actually update one ingredient
+require('../../dotenv').config();
+
 async function getFact() {
 
   var factEl = document.querySelector(".fun-fact");
@@ -9,7 +11,7 @@ async function getFact() {
     headers: { 
       'Content-Type': 'application/json',
       'accept': 'application/json',
-      'X-Fungenerators-Api-Secret': 'ToqABneuROFSmGwyxpJ2mgeF',
+      'X-Fungenerators-Api-Secret': process.env.API_KEY,
     }
    
   }).then(function(response){
