@@ -25,11 +25,10 @@
               {{#each user.ingredients as |ingredient| }}
               {{>fridge-details}}         
               {{/each}}
-          </table>
-          <div class="text-center"> 
-            <button class="btn btn-primary" type="submit">Update</button>
-          </div>
-            
+              </table>
+              <div class="text-center"> 
+                <button class="btn btn-primary" type="submit">Update</button>
+              </div>
           </form>
 
           
@@ -38,11 +37,6 @@
            <div class="row text-center">
               <h5>Your Fridge is Empty! Use the Add Ingredients button to start adding content to your fridge.</h2>
           </div>
-          {{!--
-          <div class="row text-center">
-              <h4>Add Ingredients Below!</h4>
-          </div>
-               --}}
               
           {{/if}}
       </section>
@@ -73,8 +67,6 @@
     <p id="dialog-error-msg">Please enter your content.</p>
 </div>
 
-
-
  <script src="/js/fridge.js"></script> 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -94,8 +86,6 @@
               data: quantities,
               borderWidth: 1,
               backgroundColor: "rgb(255, 192, 0)",
-              /*backgroundColor: "rgb(255, 191, 0)", */
-              /*backgroundColor: ["red", "blue", "green", "blue", "red", "blue"], */
             }]
           },
           options: {
