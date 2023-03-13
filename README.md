@@ -73,17 +73,18 @@ http://localhost:3001/
 ```
 
 You will be presented with the Home Page:
+
 ![Here is a screenshot showing the home page.](/public/images/home.png)
 
 To create a login, click the "Sign up instead" button. Enter your details and click "Submit".
 
 ![Here is a screenshot showing the login page.](/public/images/login.png)
 
-Once logged in you can start by adding ingredients to your fridge. To view the ingredients in your fridge click the "My Fridge" button. All ingredients and their quantities are displayed. The charts also show quantities of each ingredients and numbers of items in each category.
+Once logged in you can start by adding ingredients to your fridge by using the "Add Ingredients" button. To view the ingredients in your fridge click the "My Fridge" button. All ingredients and their quantities are displayed. The charts also show quantities of each ingredients and numbers of items in each category.
 
 ![Here is a screenshot showing the comments.](/public/images/myfridge.png)
 
-To create a new Recipe click the "Add recipe" button. Fill in the Recipe name and proceed to the next step where you enter the ingredients. All previously added ingredients will be displayed with quantities as you enter your new ingredients.
+To create a new Recipe click the "Add Recipe" button. Fill in the Recipe name and proceed to the next step where you enter the ingredients. All previously added ingredients will be displayed with quantities as you enter your new ingredients.
 
 ![Here is a screenshot showing the update page.](/public/images/addrecipe.png)
 
@@ -109,10 +110,6 @@ When you are finished, click "Logout" to logout.
   ## Credits
   We would like to thank the instructors at UWA Bootcamp. 
   
-  ## Questions
- If you have any questions or feedback please contact us. Details are below. As this is a learning challenge we would appreciate any feedback, or ideas for improvement.
-
- Github : https://github.com/HelenELee , https://github.com/Cableman687, https://github.com/PanosGian
-
- Email : helenelee3@outlook.com
+  ## How to Contribute
+This repository is not open for public contribution.
   
