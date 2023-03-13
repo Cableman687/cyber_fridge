@@ -46,7 +46,7 @@ module.exports = {
     } else {
       icon = "🥄";
     }
-    return `<span for="img" aria-label="food category">${icon}</span>`;
+    return `<span for="img" aria-label="food category - ${category}">${icon}</span>`;
   },
   json: function (context) { return JSON.stringify(context);  },
   labels: function (context) { return context.map(function (obj) {
