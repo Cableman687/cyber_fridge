@@ -1,3 +1,4 @@
+//validation modal
 function showError(msg) {
     document.querySelector('#dialog-error-msg').innerHTML =msg;
     document.querySelector('#dialog').classList.remove("hidden");
@@ -9,7 +10,7 @@ function showError(msg) {
 const addIngredientHandler = async (event) => {
     event.preventDefault();
   
-    // Collect values from the comment form
+    // Collect values from the form
     
     const category = document.querySelector('#category').value.trim();
     const name = document.querySelector('#name').value.trim();
@@ -25,7 +26,7 @@ const addIngredientHandler = async (event) => {
       });
   
       if (response.ok) {
-        // If successful, redirect the browser to the home page
+        // If successful, redirect the browser to the fridge page
         document.location.replace('/fridge');
       } else {
         alert(response.statusText);

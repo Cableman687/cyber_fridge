@@ -21,7 +21,8 @@ router.put('/:id', async(req, res) => {
   //create new Recipe
 router.post('/addrecipe', async (req, res) => {
   try {
-    
+    //"&" previously replaced in recipe name as it messed up passing parameter as part of URL
+    //restoring the recipe name to the original name before creating it
     const newRecipe = await Recipe.create({
       "name": req.body.name.replace("%26", "&"),
       "user_id" : req.session.user_id,

@@ -76,9 +76,10 @@ router.get('/addrecipe', withAuth, (req, res) => {
 router.get('/addrecipeingredient', withAuth, async (req, res) => {
   
   try {
-    
-    //GET THE INGREDIENTS FROM USERS FRIDGE TO USE
-    //IN DROP DOWN IN FORM WHEN ADDING INGREDIENTS
+    //Get the ingredients from the users fridge to use
+    //in drop down in form when adding ingredients
+    //first find user based on id
+    //then use that to in linked table to get ingredients
     const userData = await User.findOne({
       where: { id: req.session.user_id},
       include: [
@@ -93,6 +94,7 @@ router.get('/addrecipeingredient', withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
 
     //get all the ingredients added already to this recipe
+    //use link table to join user with the recipe and ingredients
     const recipeData = await Recipe.findAll({
       where: { id: req.query.id },
       include : [
@@ -222,7 +224,7 @@ router.get('/recipes', withAuth, async(req, res) => {
       // Pass the logged in flag to the template
       logged_in: req.session.logged_in,
       user_name: req.session.user_name,
-      //"labels": ["beef", "lamb"],
+      
     });
   
     return;
