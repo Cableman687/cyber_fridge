@@ -12,7 +12,7 @@ const addRecipeIngredientHandler = async (event) => {
     // Collect values from the comment form
     
     const recipe_id = document.querySelector('#recipe_id').value.trim();
-    const recipe_name = document.querySelector('#recipe_name').value.trim();
+    const recipe_name = document.querySelector('#recipe_name').value.trim().replace("&", "%26");
     const ingredient_id = $('#ingredient_id :selected').val();
     const ingredient_quantity = document.querySelector('#ingredient_quantity').value.trim();
 

@@ -7,7 +7,7 @@
 
 
 function countOccurences(theArray, prop) {
-    //const property = prop;
+    
   let i=0;
   let count = {};
   
@@ -18,7 +18,7 @@ function countOccurences(theArray, prop) {
         count[theArray[i][prop]] = 1;
       }
     };
-    console.log(count);
+    
     return(count);
   };
 
@@ -57,7 +57,7 @@ module.exports = {
     for (var key in newObject) {
        keys.push(key);
     }
-    //console.log(keys);
+   
     return keys;
   },
   category_count: function(context) {
@@ -66,7 +66,7 @@ module.exports = {
   },
   
   category_colours: function (context) { return context.map(function (obj) {
-    console.log(obj.category);
+    
     if (obj.category == "Meat"){
       return "#D22B2B";
     } else if (obj.category == "Fish"){
