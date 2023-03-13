@@ -96,6 +96,8 @@ You can choose to cook the recipe by clicking on the "Cook This!" button. The qu
 
 When you are finished, click "Logout" to logout.
 
+To try out our working application please click the link below:
+[CyberFridge](https://stormy-cliffs-46291.herokuapp.com/)
 
   ## License
   This project is covered by the "The MIT License" license.
