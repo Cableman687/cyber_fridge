@@ -1,5 +1,4 @@
-//call API to actually update one ingredient
-require('../../dotenv').config();
+//call API to generate random fact
 
 async function getFact() {
 
@@ -11,7 +10,7 @@ async function getFact() {
     headers: { 
       'Content-Type': 'application/json',
       'accept': 'application/json',
-      'X-Fungenerators-Api-Secret': process.env.API_KEY,
+      'X-Fungenerators-Api-Secret': 'ToqABneuROFSmGwyxpJ2mgeF',
     }
    
   }).then(function(response){
@@ -19,15 +18,8 @@ async function getFact() {
   }).then(function(data){
     console.log(data.contents.fact);
     factEl.textContent = data.contents.fact;
-
   })
 
-  
-
-  
-
-
-  
 }
 
   getFact();
