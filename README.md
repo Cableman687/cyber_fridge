@@ -29,7 +29,6 @@
   - Handlebars.js
   - Bootstrap
   - Chart.js
-  - Sequelize
 
   One of the main challenges in developing this application was designing a flexible database schema that allowed the data to be stored and retrieved easily and could accommodate all the functionality we wanted to build into the application. 
 
