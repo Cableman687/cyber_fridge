@@ -21,6 +21,8 @@
   
   The application is developed using the following technologies:
   - Javascript
+  - CSS
+  - HTML
   - Node.js
   - Sequelize
   - MySQL2
@@ -30,6 +32,7 @@
   - Bootstrap
   - Chart.js
   - Sequelize
+  - Bcrypt
 
   One of the main challenges in developing this application was designing a flexible database schema that allowed the data to be stored and retrieved easily and could accommodate all the functionality we wanted to build into the application. 
 
