@@ -72,15 +72,15 @@ http://localhost:3001/
 
 ```
 
-You will be presented with the Home Page:
-
-![Here is a screenshot showing the home page.](/public/images/home.png)
-
-To create a login, click the "Sign up instead" button. Enter your details and click "Submit".
+You will be presented with the Login Page. To create a login, click the "Sign up instead" button. Enter your details and click "Submit".
 
 ![Here is a screenshot showing the login page.](/public/images/login.png)
 
-Once logged in you can start by adding ingredients to your fridge by using the "Add Ingredients" button. To view the ingredients in your fridge click the "My Fridge" button. All ingredients and their quantities are displayed. The charts also show quantities of each ingredients and numbers of items in each category.
+Once logged in you can see the home page with the fun food fact:
+
+![Here is a screenshot showing the home page.](/public/images/the-home-page.png)
+
+You can start adding ingredients to your fridge by using the "Add Ingredients" button. To view the ingredients in your fridge click the "My Fridge" button. All ingredients and their quantities are displayed. The charts also show quantities of each ingredients and numbers of items in each category.
 
 ![Here is a screenshot showing the comments.](/public/images/myfridge.png)
 
