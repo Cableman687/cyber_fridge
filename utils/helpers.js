@@ -5,6 +5,11 @@
     // set the initial value as an object
   };
 
+  function uniq(a) {
+    return a.sort().filter(function(item, pos, ary) {
+        return !pos || item != ary[pos - 1];
+    });
+}
 
 function countOccurences(theArray, prop) {
     
@@ -65,10 +70,12 @@ module.exports = {
     return Object.keys(newObject).map(function(key){return newObject[key]})
   },
   
-  category_colours: function (context) { return context.map(function (obj) {
+  category_colours: function (context) { 
+    let newArray = context.map(function (obj) {
     
     if (obj.category == "Meat"){
       return "#D22B2B";
+     //return "Red";
     } else if (obj.category == "Fish"){
       return "#0096FF";
     } else if (obj.category == "Vegetables"){
@@ -77,8 +84,14 @@ module.exports = {
       return "#EADDCA";
     } else if (obj.category == "Fruit"){
       return "#FFEA00";
+    } else if (obj.category == "Condiments"){
+      return "#E0B0FF";
     } else {
-      return "Grey";
+      return "#E5E4E2";
     }
-      });  },
-  };
+      }); 
+    let uniqueArray =  uniq(newArray);
+    return uniqueArray;
+    
+  }
+}
